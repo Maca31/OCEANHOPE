@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output/dist/bin
+dist/
+build/
+
+# Environment variables
+.env
+.env.*
+
+# Sistemas de lock y dependencias
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Editor cache y sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Imágenes grandes y otros archivos de assets ocultos o pesados
+src/assets/*.png
+src/assets/*.jpg
+src/assets/*.jpeg
+src/assets/*.gif
+src/assets/*.svg
+
+# Out/Debugging
+coverage/
+
+# SO
+*.swp
