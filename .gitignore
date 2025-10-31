@@ -16,9 +16,10 @@ build/
 .env.*
 
 # Sistemas de lock y dependencias
-package-lock.json
+# NOTA: package-lock.json debería subirse para builds consistentes en Vercel
+# package-lock.json
 yarn.lock
-pnpm-lock.yaml
+# pnpm-lock.yaml (descomenta si usas pnpm)
 
 # Editor cache y sistema
 .DS_Store
@@ -27,11 +28,13 @@ Thumbs.db
 .idea/
 
 # Imágenes grandes y otros archivos de assets ocultos o pesados
-src/assets/*.png
-src/assets/*.jpg
-src/assets/*.jpeg
-src/assets/*.gif
-src/assets/*.svg
+# NOTA: Las imágenes en src/assets/ son necesarias para el build
+# Si necesitas ignorar imágenes pesadas, hazlo de forma específica
+# src/assets/*.png
+# src/assets/*.jpg
+# src/assets/*.jpeg
+# src/assets/*.gif
+# src/assets/*.svg
 
 # Out/Debugging
 coverage/
