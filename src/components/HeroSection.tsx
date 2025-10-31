@@ -23,24 +23,26 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center"
       style={{
         minHeight: 'calc(100vh - var(--navbar-height, 84px))',
         paddingTop: 'var(--navbar-height, 84px)',
-        paddingBottom: '2rem',
+        paddingBottom: '8rem',
       }}
     >
-      {/* Particle Field */}
-      <ParticleField />
-      
-      {/* Floating Elements */}
-      <FloatingElements />
-      
-      {/* Sun/Moon with Ocean Reflection */}
-      <motion.div 
-        style={{ y: celestialY }}
-        className="absolute top-24 right-1/4 z-0"
-      >
+      {/* Background elements container - with overflow hidden */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Particle Field */}
+        <ParticleField />
+        
+        {/* Floating Elements */}
+        <FloatingElements />
+        
+        {/* Sun/Moon with Ocean Reflection */}
+        <motion.div 
+          style={{ y: celestialY }}
+          className="absolute top-24 right-1/4 z-0"
+        >
         {theme === 'light' ? (
           // Sun
           <div className="relative">
@@ -107,39 +109,40 @@ export function HeroSection() {
           </div>
         )}
         
-        {/* Ocean Reflection */}
-        <motion.div
-          className="absolute top-48 left-1/2 -translate-x-1/2 w-full"
-          initial={{ opacity: 0.6 }}
-          animate={{
-            opacity: [0.4, 0.7, 0.4],
-            scaleY: [1, 1.1, 1],
-          }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <div
-            className={`w-32 h-48 ${
-              theme === 'light'
-                ? 'bg-gradient-to-b from-amber-400/30 via-yellow-300/20 to-transparent'
-                : 'bg-gradient-to-b from-slate-200/20 via-slate-300/10 to-transparent'
-            } blur-sm`}
-            style={{
-              clipPath: 'polygon(40% 0%, 60% 0%, 80% 100%, 20% 100%)',
+          {/* Ocean Reflection */}
+          <motion.div
+            className="absolute top-48 left-1/2 -translate-x-1/2 w-full"
+            initial={{ opacity: 0.6 }}
+            animate={{
+              opacity: [0.4, 0.7, 0.4],
+              scaleY: [1, 1.1, 1],
             }}
-          />
+            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <div
+              className={`w-32 h-48 ${
+                theme === 'light'
+                  ? 'bg-gradient-to-b from-amber-400/30 via-yellow-300/20 to-transparent'
+                  : 'bg-gradient-to-b from-slate-200/20 via-slate-300/10 to-transparent'
+              } blur-sm`}
+              style={{
+                clipPath: 'polygon(40% 0%, 60% 0%, 80% 100%, 20% 100%)',
+              }}
+            />
+          </motion.div>
         </motion.div>
-      </motion.div>
-      
-      {/* Animated Ocean Waves */}
-      <OceanWaves />
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        
+        {/* Animated Ocean Waves */}
+        <OceanWaves />
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      </div>
 
       {/* Content */}
       <motion.div
         style={{ opacity, scale, y }}
-        className="relative z-10 text-center px-6 max-w-5xl pb-8"
+        className="relative z-10 text-center px-6 max-w-5xl pb-12 mb-8"
       >
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -157,8 +160,8 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="mb-6 text-foreground/70 max-w-2xl mx-auto"
-          style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: '1.6' }}
+          className="mb-4 text-foreground/70 max-w-2xl mx-auto"
+          style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: '1.6', marginBottom: '1.5rem' }}
         >
           Every wave carries a story. Every action creates ripples of change.
           Join us in our mission to restore and protect the world's oceans
@@ -169,7 +172,8 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-2"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          style={{ marginTop: '1rem', marginBottom: '2rem' }}
         >
           <Button
             size="lg"
