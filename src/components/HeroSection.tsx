@@ -25,9 +25,9 @@ export function HeroSection() {
       ref={containerRef}
       className="relative flex items-center justify-center overflow-hidden"
       style={{
-        minHeight: '100vh',
-        height: 'calc(100vh - var(--navbar-height, 84px))',
+        minHeight: 'calc(100vh - var(--navbar-height, 84px))',
         paddingTop: 'var(--navbar-height, 84px)',
+        paddingBottom: '2rem',
       }}
     >
       {/* Particle Field */}
@@ -139,7 +139,7 @@ export function HeroSection() {
       {/* Content */}
       <motion.div
         style={{ opacity, scale, y }}
-        className="relative z-10 text-center px-6 max-w-5xl"
+        className="relative z-10 text-center px-6 max-w-5xl pb-8"
       >
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
