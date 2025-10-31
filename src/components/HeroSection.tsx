@@ -157,7 +157,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="mb-12 text-foreground/70 max-w-2xl mx-auto"
+          className="mb-6 text-foreground/70 max-w-2xl mx-auto"
           style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: '1.6' }}
         >
           Every wave carries a story. Every action creates ripples of change.
@@ -169,7 +169,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-2"
         >
           <Button
             size="lg"
